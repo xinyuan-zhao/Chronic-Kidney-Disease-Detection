@@ -42,7 +42,7 @@ Chronic Kidney Disease affects millions worldwide, often going undetected until 
 
 ---
 
-## 📁 Notebooks
+## Notebooks
 
 | Notebook | Description |
 |----------|-------------|
