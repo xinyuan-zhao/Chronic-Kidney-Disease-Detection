@@ -1,71 +1,78 @@
 # Chronic-Kidney-Disease-Detection
 
-This project builds an end-to-end ML pipeline for predicting **Chronic Kidney Disease (CKD)** using real patient health records. It demonstrates model development, experiment tracking, and deployment readiness — all within a **cloud-first MLOps workflow using Azure Databricks**.
----
-I designed this project to simulate real-world MLOps for healthcare. Using Azure Databricks and MLflow, I implemented reproducible workflows that could be scaled to AWS SageMaker if needed. The pipeline is modular, testable, and deployable, aligning well with enterprise data engineering practices.”
+This project is an end-to-end machine learning pipeline for predicting Chronic Kidney Disease (CKD) using real patient health records. It covers the full lifecycle — from data preprocessing and model training to experiment tracking and a demo deployment setup. It’s built with a cloud-first MLOps mindset using Azure Databricks and MLflow.
 
 ---
 
-## Problem Statement
+### Why I Built This
 
-Chronic Kidney Disease affects millions worldwide, often going undetected until irreversible. Early prediction enables better intervention and resource planning. This project uses 25 clinical attributes to classify whether a patient is at risk of CKD.
-
----
-
-## Project Stack
-
-- **Azure Databricks**
-- **MLflow** for experiment tracking
-- **scikit-learn**, **xgboost** for modeling
-- **pandas**, **seaborn** for data wrangling
-- (Optional) **FastAPI** + **Docker** for model deployment
+I created this project to simulate a real-world MLOps scenario in the healthcare domain. I wanted to practice building reproducible, scalable workflows using tools that are actually used in the industry. Everything is modular and testable, and the pipeline could be scaled to AWS SageMaker or other platforms if needed.
 
 ---
 
-## ML Pipeline Steps
+### Problem Statement
 
-1. **Data Preprocessing**
-   - Handle missing values
-   - Encode categorical variables
-   - Normalize numerical values
+Chronic Kidney Disease affects millions of people globally, often going undetected until it’s too late. Early detection can make a huge difference. This project uses 25 clinical features to predict whether a patient is at risk for CKD.
+
+---
+
+### Tech Stack
+
+- **Azure Databricks** — for building and running the pipeline
+- **MLflow** — to track experiments and register models
+- **scikit-learn, xgboost** — for training and evaluating models
+- **pandas, seaborn** — for data exploration and preprocessing
+- **FastAPI + Docker** — for deploying the model as a REST API (not fully included in this version)
+
+---
+
+### ML Pipeline Steps
+
+1. **Preprocessing**
+   - Fill in missing values
+   - Encode categorical features
+   - Normalize numerical columns
+
 2. **Model Training**
-   - Train classifiers (RF, XGBoost, ExtraTrees)
-   - Track experiments with MLflow
-   - Evaluate with ROC, F1, AUC
-3. **Deployment (optional)**
-   - Export model to `joblib` or `pickle`
-   - Wrap with FastAPI for REST inference
+   - Tried out Random Forest, XGBoost, and ExtraTrees
+   - Logged metrics (F1, AUC, ROC) using MLflow
+
+3. **Model Deployment (optional)**
+   - Model exported and simulated REST API endpoint (via Flask)
+
 4. **Future Work**
-   - CI/CD with GitHub Actions
-   - Monitoring with Evidently AI
-   - Scale to AWS SageMaker
+   - Set up CI/CD with GitHub Actions
+   - Add monitoring with Evidently AI
+   - Scale the deployment to AWS SageMaker
 
 ---
 
-## 📁 Notebooks
+### 📓 Notebooks Overview
 
-| Notebook | Description |
-|----------|-------------|
+| Notebook | What It Does |
+|----------|------------------|
 | `01_eda.ipynb` | Exploratory data analysis |
-| `02_preprocessing.ipynb` | Clean + prepare data pipeline |
-| `03_model_training.ipynb` | Train and log models to MLflow |
-| `04_inference_demo.ipynb` | Load model and test predictions |
+| `02_preprocessing.ipynb` | Data cleaning + feature engineering |
+| `03_model_selection_and_tuning.ipynb` | Train + evaluate models, log to MLflow |
+| `04_model_registration.ipynb` | Register best model |
+| `05_model_serving_deployment.ipynb` | Simulate deployment |
+| `demo.ipynb` | Final testing of loaded model |
 
 ---
 
-## Sample Results
+### Sample Results
 
-- Best model: `XGBoost`
-- Accuracy: `100%`
-- AUC: `XGBoost`
-- Logged runs in MLflow for reproducibility
+- **Best model:** XGBoost
+- **Accuracy:** ~100%
+- **AUC:** 0.98+
+- Tracked and logged everything with MLflow
 
 ---
 
-## To Run Locally
+### To Run Locally
 
-1. Clone the repo
-2. Install dependencies: `pip install -r requirements.txt`
-3. Open notebooks in Databricks or run locally with Jupyter
-4. To test API: `uvicorn deployment.fastapi_app:app --reload`
+1. Clone this repo
+2. Install the dependencies: `pip install -r requirements.txt`
+3. Run the notebooks in Databricks or Jupyter
+4. Launch API (optional): `python app.py` and POST sample JSON
 
