@@ -55,9 +55,9 @@ Chronic Kidney Disease affects millions worldwide, often going undetected until 
 
 ## Sample Results
 
-- Best model: `Random Forest`
-- Accuracy: `XX.X%`
-- AUC: `X.XX`
+- Best model: `XGBoost`
+- Accuracy: `100%`
+- AUC: `XGBoost`
 - Logged runs in MLflow for reproducibility
 
 ---
