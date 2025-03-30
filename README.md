@@ -1,12 +1,17 @@
 # Chronic-Kidney-Disease-Detection
 
-This project is an end-to-end machine learning pipeline for predicting Chronic Kidney Disease (CKD) using real patient health records. It covers the full lifecycle — from data preprocessing and model training to experiment tracking and a demo deployment setup. It’s built with a cloud-first MLOps mindset using Azure Databricks and MLflow.
+This project is a hands-on simulation of a real-world healthcare MLOps pipeline. The goal was to build an end-to-end machine learning workflow to detect Chronic Kidney Disease (CKD) using real patient health records — from data preprocessing, model training and evaluation, to tracking and deployment readiness.
+
+It was developed entirely on Azure Databricks and tracked with MLflow, reflecting a production-like environment that can scale to tools like AWS SageMaker or integrate with Airflow for orchestration. 
+
+While the project was done in a short time, I designed it with a modular and reproducible structure that aligns with enterprise MLOps practices — making it testable, traceable, and ready for future deployment.
+
 
 ---
 
 ### Why I Built This
 
-I created this project to simulate a real-world MLOps scenario in the healthcare domain. I wanted to practice building reproducible, scalable workflows using tools that are actually used in the industry. Everything is modular and testable, and the pipeline could be scaled to AWS SageMaker or other platforms if needed.
+I created this project to simulate a real-world MLOps scenario in the healthcare domain. I wanted to build reproducible, scalable workflows using tools that are actually used in the industry.
 
 ---
 
